@@ -1,0 +1,14 @@
+/* ~~~~~~~~~~~ Exercise 1: statements vs expresstions ~~~~~~~~~~~ */
+using System.IO.Pipelines;
+using System.Runtime.CompilerServices;
+
+int calculation = 34 * 17 - 12 / 6;
+calculation -= (9 * 3);
+Console.WriteLine(calculation);
+Console.WriteLine("Only assignment, call, increment, decrement, await, and new object expressions can be used as a statementCS0201");
+int math = (4 * (7 - 9) + 11) / 3;
+bool trueorfalse = (3 == 2 && 4 > 1) || false;
+double math2 = (32.1 - 3.445) * 17.7 / (2.38 + 21.9);
+Console.WriteLine($"math: {math}");
+Console.WriteLine($"trueorfalse: {trueorfalse}");
+Console.WriteLine($"math2: {math2}");
