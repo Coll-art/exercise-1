@@ -2,6 +2,7 @@
 using System.Collections;
 using System.IO.Pipelines;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 int calculation = 34 * 17 - 12 / 6;
 calculation -= 9 * 3;
@@ -29,12 +30,17 @@ Console.WriteLine(isDeclared.GetType());
 Console.WriteLine(isInferred.GetType());
 Console.WriteLine(alsoInferred.GetType());
 
+int x = 6;
+int y = 7;
+
+int expression1 = 6 - 1 * (x * y) * (6 - 8) / 4;
+Console.WriteLine($"expression1 6 - 1 * (x * y) * (6 - 8) / 4 evaluates to:{expression1} ");
+
 string expression2 = (5 * 2).ToString() + false.ToString();
-Console.WriteLine($"expression2 (5 * 2).ToString() + false.ToString() evaluate to:{expression2}");
+Console.WriteLine($"expression2 (5 * 2).ToString() + false.ToString() evaluates to:{expression2}");
 
-int result1 = 56 + 45 - 9;
-double result2 = 66 / 5 * 7.2;
-bool result3 = 3 > 2 && 6 > 6 || 7 > 6 && 5 > 4;
-string result4;
+double expression4 =66 / 5 * 7.2          (5.2 - 99);
+Console.WriteLine($"expression4 66 / 5 * 7.2 evaluates to: {expression4}");
 
-
+bool expression3 = 3 > 2 == 6 > 6 || (x * y) > 4; 
+Console.WriteLine($"expression3  3 > 2 == 6 > 6 || (x * y) > 4: {expression3}");
