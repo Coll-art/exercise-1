@@ -1,0 +1,11 @@
+/* ~~~~~~~~~~~ Exercise 1: /* ~~~~~~~~~~~ Exercise 1: conditional statements/branching ~~~~~~~~~~~ */
+string num = "40";
+int number = int.Parse(num);
+    
+if (number > 0)
+    {
+        Console.WriteLine($"number: {number} is positive");
+    }
+
+else if (number )
+
