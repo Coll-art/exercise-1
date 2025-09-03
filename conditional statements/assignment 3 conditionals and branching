@@ -1,14 +1,59 @@
 /* ~~~~~~~~~~~ Exercise 1: /* ~~~~~~~~~~~ Exercise 1: conditional statements/branching ~~~~~~~~~~~ */
-string num = "40";
-int number = int.Parse(num);
-    
-if (number > 0)
-    {
-        Console.WriteLine($"number: {number} is positive");
-    }
 
-else if (number )
+Console.WriteLine("give me a number");
+string num = Console.ReadLine();
+int number = int.Parse(num);
+
+
+if (number > 0)
 {
- Console.WriteLine($number: {number})
+    Console.WriteLine($"number: The {number} is positive.");
 }
 
+else if (number < 0)
+{
+    Console.WriteLine($"number: The {number} is Negative.");
+}
+
+else if (number == 0)
+{
+    Console.WriteLine($"number: The {number} is niether positive or negative, it is zero.");
+}
+
+
+Console.WriteLine("give me two numbers.");
+string num1 = Console.ReadLine();
+string num2 = Console.ReadLine();
+int number1 = int.Parse(num1);
+int number2 = int.Parse(num2);
+
+if (number1 > number2)
+{
+    Console.WriteLine("number 1 is greater");
+}
+else if (number1 < number2)
+{
+    Console.WriteLine("number 2 is greater ");
+}
+else if (number1 == number2)
+{
+    Console.WriteLine("The numbers are the same");
+}
+
+
+Console.WriteLine("what is your grade?(0-100)");
+string grade = Console.ReadLine();
+int letterGrade = int.Parse(grade);
+
+if (letterGrade == 90 || letterGrade > 90)
+{
+    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+}
+else if (letterGrade < 90 && letterGrade > 80 || letterGrade == 80)
+{
+    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+}
+else if (letterGrade > 70 && letterGrade < 80 || letterGrade == 70)
+{
+    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+}
