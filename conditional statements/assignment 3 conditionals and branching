@@ -8,4 +8,7 @@ if (number > 0)
     }
 
 else if (number )
+{
+ Console.WriteLine($number: {number})
+}
 
