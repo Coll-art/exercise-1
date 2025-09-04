@@ -1,3 +1,4 @@
+
 /* ~~~~~~~~~~~ Exercise 1: /* ~~~~~~~~~~~ Exercise 1: conditional statements/branching ~~~~~~~~~~~ */
 
 Console.WriteLine("give me a number");
@@ -45,15 +46,61 @@ Console.WriteLine("what is your grade?(0-100)");
 string grade = Console.ReadLine();
 int letterGrade = int.Parse(grade);
 
-if (letterGrade == 90 || letterGrade > 90)
+if (letterGrade >= 90)
 {
-    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+    Console.WriteLine($"A score of {grade} represents a letter grade of A");
 }
-else if (letterGrade < 90 && letterGrade > 80 || letterGrade == 80)
+else if (letterGrade < 90 && letterGrade >= 80)
 {
-    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+    Console.WriteLine($"A score of {grade} represents a letter grade of B");
 }
-else if (letterGrade > 70 && letterGrade < 80 || letterGrade == 70)
+else if (letterGrade >= 70 && letterGrade < 80)
 {
-    Console.WriteLine($"A score of {grade} represents a letter grade of {letterGrade}");
+    Console.WriteLine($"A score of {grade} represents a letter grade of C");
 }
+else if (letterGrade >= 60 && letterGrade < 70)
+{
+    Console.WriteLine($"A score of {grade} represents a letter grade of D");
+}
+else if (letterGrade <= 59)
+{
+    Console.WriteLine($"A score of {grade} represents a letter grade of F");
+}
+
+
+Console.WriteLine("give me a number between 1 and 7");
+string day = Console.ReadLine();
+int dayNum = int.Parse(day);
+
+if (dayNum == 1)
+{
+    Console.WriteLine("Today is Sunday!");
+}
+else if (dayNum == 2)
+{
+    Console.WriteLine("Today is Monday. Good Luck.");
+}
+else if (dayNum == 3)
+{
+    Console.WriteLine("Today is Tuesday.");
+}
+else if (dayNum == 4)
+{
+    Console.WriteLine("Today is Wednesday.");
+}
+else if (dayNum == 5)
+{
+    Console.WriteLine("Today is Thursday.");
+}
+else if (dayNum == 6)
+{
+    Console.WriteLine("Today is Friday.");
+}
+else if (dayNum == 7)
+{
+    Console.WriteLine("Today is Saturday. Finally!");
+}
+
+
+
+Console.WriteLine("Please input the amount of the purchase: (No, time aint free.)");
