@@ -104,3 +104,16 @@ else if (dayNum == 7)
 
 
 Console.WriteLine("Please input the amount of the purchase: (No, time aint free.)");
+string purchase = Console.ReadLine();
+int Purchase = int.Parse(purchase);
+int finalpurchase = Purchase;
+if (Purchase == 100)
+{
+     finalpurchase = Purchase - 10;
+    Console.WriteLine($"You got a 10% discount. Your final purchase is  ${finalpurchase}");
+}
+
+else if (finalpurchase > 100 || finalpurchase < 100)
+{
+    Console.WriteLine($"Your Purchase is ${finalpurchase}");
+}
