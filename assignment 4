@@ -1,0 +1,26 @@
+// ~~~~~~~~~ Assignment 4: loops and iteration ~~~~~~~~~~
+// exercise 1
+Console.WriteLine("Theater seating arrangement:");
+//for loop
+for (int i = 1; i <= 5; i++)
+{   //nestrf for loop
+    var seatsInRow = "";
+    for (int j = 1; j <= 10; j++)
+    {
+        seatsInRow += $"{i}-{j} ";
+    }
+    Console.WriteLine(seatsInRow);
+}
+
+//exercise 2
+Console.WriteLine("Simplest interst calculation");
+
+int principle = 1000;
+var rate = 5;
+var years = 1;
+
+while ()
+{
+    int currenty = principle * rate * years / 100;
+    Console.WriteLine "Year <years>: $<interest>"
+}
