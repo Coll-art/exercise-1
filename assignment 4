@@ -1,5 +1,7 @@
 // ~~~~~~~~~ Assignment 4: loops and iteration ~~~~~~~~~~
 // exercise 1
+using System.Globalization;
+
 Console.WriteLine("Theater seating arrangement:");
 //for loop
 for (int i = 1; i <= 5; i++)
@@ -19,8 +21,32 @@ int principle = 1000;
 var rate = 5;
 var years = 1;
 
-while ()
+
+while (years <= 5)
 {
-    int currenty = principle * rate * years / 100;
-    Console.WriteLine "Year <years>: $<interest>"
+    int yearlyInterest = principle * rate * years / 100;
+    Console.WriteLine($"Year {years}: ${yearlyInterest}");
+     years++;
 }
+
+
+//Exercise 3
+Console.WriteLine("Prime Numbers between 2 and 30:");
+// num ranges from 2 to 30
+for (var num = 2; num <= 30; num++)
+{
+    var isPrime = true;
+    // check if num is divisible by any number from 2 up to num/2
+    for (var factor = 2; factor <= num / 2;)
+    {    //if num is divisible- break
+        if (num % factor == 0)
+        {
+            isPrime = false;
+            break;
+
+        }
+    }
+
+    Console.WriteLine($"isPrime value: {isPrime} ");
+}
+
