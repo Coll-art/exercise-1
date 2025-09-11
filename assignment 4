@@ -86,8 +86,15 @@ while (username != "awesome_user_42" && password != "p455w0rd")
 //exercise 6
 // interate = repeat
 string[] someStrings = ["This", "is", "an", "array", "of", "strings", "let's", "iterate", "over", "it!"];
-foreach (string words in someStrings)
-{
-    Console.WriteLine($"iterate {someStrings}");
+foreach (string word in someStrings)
+{ //or: (word + " ");
+    Console.Write($"{word} ");
  }
+
+//array of numberes
+int[] num = { 1, 2, 3, 4, 5 };
+foreach (int numbers in num)
+{
+    Console.Write($"{numbers} ");
+}
  
