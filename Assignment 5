@@ -1,1 +1,19 @@
-//assignment 5 Arrays and Lists
+/* ~~~~~~~~~~~ Exercise 1: Simple Array Operations ~~~~~~~~~~~ */
+//step one
+int[] numbers = [1, 2, 3, 4, 5];
+
+for (int i = 0; i > 4; i++)
+{
+    Console.Write(i);
+}
+
+
+//step 2
+Console.WriteLine("give me 5 numbers");
+string givenNum = Console.ReadLine();
+int givenNumbers = int.Parse(givenNum);
+
+for (int i = 0; i < 4; i++)
+{
+    Console.Write(givenNumbers);
+}
