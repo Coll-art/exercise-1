@@ -2,18 +2,21 @@
 //step one
 int[] numbers = [1, 2, 3, 4, 5];
 
-for (int i = 0; i > 4; i++)
+for (int i = 0; i < numbers.Length; i++)
 {
-    Console.Write(i);
+    Console.Write(numbers[i]);
 }
 
 
 //step 2
 Console.WriteLine("give me 5 numbers");
-string givenNum = Console.ReadLine();
-int givenNumbers = int.Parse(givenNum);
+int[] nums = [];
 
-for (int i = 0; i < 4; i++)
+for (int i = 0; i < 5; i++)
 {
-    Console.Write(givenNumbers);
+    string givenNum = Console.ReadLine();
+    int givenNumber = int.Parse(givenNum);
+    nums.Append(givenNumber);
+    
 }
+ Console.WriteLine(nums);
