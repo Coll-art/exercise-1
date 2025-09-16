@@ -1,5 +1,7 @@
 /* ~~~~~~~~~~~ Exercise 1: Simple Array Operations ~~~~~~~~~~~ */
 //step one
+using System.Diagnostics.CodeAnalysis;
+
 int[] numbers = [1, 2, 3, 4, 5];
 
 for (int i = 0; i < numbers.Length; i++)
@@ -8,15 +10,38 @@ for (int i = 0; i < numbers.Length; i++)
 }
 
 
-//step 2
+
+//step 2 get imput of [5]; find sum
 Console.WriteLine("give me 5 numbers");
-int[] nums = [];
+int[] nums = new int[5];
 
 for (int i = 0; i < 5; i++)
 {
     string givenNum = Console.ReadLine();
     int givenNumber = int.Parse(givenNum);
-    nums.Append(givenNumber);
+    nums[i] = givenNumber;
     
 }
- Console.WriteLine(nums);
+
+Console.WriteLine(nums.Length);
+var sum = 0;
+
+for (var i = 0; i < nums.Length; i++)
+{
+    var num = nums[i];
+    sum = sum + num;
+}
+Console.WriteLine($"sum is {sum}");
+
+// //step 3
+// List<string> names;
+// Console.WriteLine("Give me five names");
+// var name1 = Console.ReadLine();
+
+// for (var i = 0; i <= 4; i++)
+// {
+//     names.Add(name1)
+//     Console.WriteLine() 
+
+// }
+
