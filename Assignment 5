@@ -33,15 +33,18 @@ for (var i = 0; i < nums.Length; i++)
 }
 Console.WriteLine($"sum is {sum}");
 
-// //step 3
-// List<string> names;
-// Console.WriteLine("Give me five names");
-// var name1 = Console.ReadLine();
+//step 3
+List<string> names;
+names = new List<string>();
+Console.WriteLine("Give me five names");
 
-// for (var i = 0; i <= 4; i++)
-// {
-//     names.Add(name1)
-//     Console.WriteLine() 
+for (var i = 0; i <= 4; i++)
+{
+    var name1 = Console.ReadLine();
+    names.Add(name1); 
+}
 
-// }
-
+foreach (var name in names)
+{
+    Console.WriteLine(name); 
+}
