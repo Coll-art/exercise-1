@@ -21,7 +21,7 @@ else if (number == 0)
     Console.WriteLine($"number: The {number} is niether positive or negative, it is zero.");
 }
 
-
+//if it was a for loop, you would not need to readlines
 Console.WriteLine("give me two numbers.");
 string num1 = Console.ReadLine();
 string num2 = Console.ReadLine();
