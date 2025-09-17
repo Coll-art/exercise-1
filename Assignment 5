@@ -48,3 +48,23 @@ foreach (var name in names)
 {
     Console.WriteLine(name); 
 }
+//step 4
+List<string> story;
+story = new List<string>();
+List<int> nums;
+nums = new List<int>();
+
+Console.WriteLine("Write me a five word story");
+// string words = Console.ReadLine();
+// story.Add(words);
+
+for (var i = 0; i <= 4; i++)
+{
+   string words = Console.ReadLine();
+    story.Add(words);
+}
+
+ foreach (var word in story)
+{
+    Console.Write(word);
+}
