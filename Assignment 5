@@ -1,70 +1,87 @@
-/* ~~~~~~~~~~~ Exercise 1: Simple Array Operations ~~~~~~~~~~~ */
-//step one
-using System.Diagnostics.CodeAnalysis;
-
-int[] numbers = [1, 2, 3, 4, 5];
-
-for (int i = 0; i < numbers.Length; i++)
+//~~~~~~~~~~~ Exercise 1: Simple Array Operations ~~~~~~~~~~~ */
+/*//step one
+ int[] numbers = [1, 2, 3, 4, 5];
+ for (int i = 0; i < numbers.Length; i++)
+ {
+     Console.Write(numbers[i]);
+ }
+ //step 2 get imput of [5]; find sum
+ Console.WriteLine("give me 5 numbers");
+ int[] nums = new int[5];
+ for (int i = 0; i < 5; i++)
+ {
+     string givenNum = Console.ReadLine();
+     int givenNumber = int.Parse(givenNum);
+     nums[i] = givenNumber;
+ }
+ Console.WriteLine(nums.Length);
+ var sum = 0;
+ for (var i = 0; i < nums.Length; i++)
+ {
+     var num = nums[i];
+     sum = sum + num;
+ }
+ Console.WriteLine($"sum is {sum}");
+ //step 3
+ //notice the extra. that was going to make it run 25 times instead of 5
+ List<string> names;
+ names = new List<string>();
+ Console.WriteLine("Give me five names");
+ for (var i = 0; i <= 4; i++)
+ {
+     var name1 = Console.ReadLine();
+     names.Add(name1);
+ }
+ 
+ foreach (var name in names)
 {
-    Console.Write(numbers[i]);
+    Console.WriteLine(name);
 }
+*/
 
-
-
-//step 2 get imput of [5]; find sum
-Console.WriteLine("give me 5 numbers");
-int[] nums = new int[5];
-
-for (int i = 0; i < 5; i++)
-{
-    string givenNum = Console.ReadLine();
-    int givenNumber = int.Parse(givenNum);
-    nums[i] = givenNumber;
-    
-}
-
-Console.WriteLine(nums.Length);
-var sum = 0;
-
-for (var i = 0; i < nums.Length; i++)
-{
-    var num = nums[i];
-    sum = sum + num;
-}
-Console.WriteLine($"sum is {sum}");
-
-//step 3
-List<string> names;
-names = new List<string>();
-Console.WriteLine("Give me five names");
-
-for (var i = 0; i <= 4; i++)
-{
-    var name1 = Console.ReadLine();
-    names.Add(name1); 
-}
-
-foreach (var name in names)
-{
-    Console.WriteLine(name); 
-}
 //step 4
-List<string> story;
-story = new List<string>();
-List<int> nums;
-nums = new List<int>();
+List<string> story = new List<string>();
 
-Console.WriteLine("Write me a five word story");
-// string words = Console.ReadLine();
-// story.Add(words);
+
+Console.WriteLine("Write me a five word story. TYPE: STOP to end early");
+// can replace for loop with: string words = Console.ReadLine();
+ //story.Add(words);
 
 for (var i = 0; i <= 4; i++)
 {
-   string words = Console.ReadLine();
+    string words = Console.ReadLine();
     story.Add(words);
+    //break condition
+    if (words == "STOP")
+    {
+        break;
+    }
+    else if (words == ":(")
+    {
+        break;
+    }
 }
 
- foreach (var word in story)
+foreach (var word in story)
 {
     Console.Write(word);
 }
+/*
+List<int> password = new List<int> {1,3,5,2,9,4};
+ password.Sort();
+
+Console.WriteLine("create a 5 number password");
+
+for (int i = 0; i <= 4; i++)
+{
+    var imput = Console.ReadLine();
+    int code = int.Parse(imput);
+    password.Add(code);
+}
+
+foreach (var imputs in password)
+{
+    Console.Write($"{imputs} ");
+}
+*/
+
