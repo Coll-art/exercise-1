@@ -40,27 +40,30 @@
 */
 
 //step 4
-List<string> story = new List<string>();
+List<string> story = new List<string> { "walked ", "down ", "street. ", "Hit ", "car " };
 
 
 Console.WriteLine("Write me a five word story. TYPE: STOP to end early");
-// can replace for loop with: string words = Console.ReadLine();
- //story.Add(words);
 
-for (var i = 0; i <= 4; i++)
-{
-    string words = Console.ReadLine();
-    story.Add(words);
-    //break condition
-    if (words == "STOP")
-    {
-        break;
-    }
-    else if (words == ":(")
-    {
-        break;
-    }
-}
+
+
+// can replace for loop with: string words = Console.ReadLine();
+//story.Add(words);
+
+// for (var i = 0; i <= 4; i++)
+// {
+//     string words = Console.ReadLine();
+//     story.Add(words);
+//     //break condition
+//     if (words == "STOP")
+//     {
+//         break;
+//     }
+//     else if (words == ":(")
+//     {
+//         break;
+//     }
+// }
 
 foreach (var word in story)
 {
