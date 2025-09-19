@@ -37,15 +37,16 @@
 {
     Console.WriteLine(name);
 }
-*/
+
 
 //step 4
-List<string> story = new List<string> { "walked ", "down ", "street. ", "Hit ", "car " };
+using System.Diagnostics;
 
+List<string> story = new List<string> { "A ", "found ", "bear ", "vines. ", "rasberry " };
 
-Console.WriteLine("Write me a five word story. TYPE: STOP to end early");
+story.Sort();
 
-
+Console.WriteLine("Written a five word story.");
 
 // can replace for loop with: string words = Console.ReadLine();
 //story.Add(words);
@@ -69,22 +70,53 @@ foreach (var word in story)
 {
     Console.Write(word);
 }
-/*
-List<int> password = new List<int> {1,3,5,2,9,4};
- password.Sort();
 
-Console.WriteLine("create a 5 number password");
 
-for (int i = 0; i <= 4; i++)
-{
-    var imput = Console.ReadLine();
-    int code = int.Parse(imput);
-    password.Add(code);
-}
+//step 4.5
+List<int> password = new List<int> { 1, 3, 5, 2, 4 };
+
+password.Sort();
+
+Console.WriteLine("created a 5 number password");
+
+// for (int i = 0; i <= 4; i++)
+// {
+//     var imput = Console.ReadLine();
+//     int code = int.Parse(imput);
+//     password.Add(code);
+// }
 
 foreach (var imputs in password)
 {
     Console.Write($"{imputs} ");
 }
+
 */
+
+// step 5
+using System.Security;
+
+List<int> values = new List<int>();
+List<int> runningToltals = new List<int>();
+
+var sum = 0;
+
+Console.WriteLine("Give me five number.");
+
+for (int i = 0; i <= 4; i++)
+{
+    var val = Console.ReadLine();
+    var value = int.Parse(val);
+    values.Add(value);
+    //total
+
+    sum = sum + value;
+    runningToltals.Add(sum);
+    
+}
+
+for (var i =0;)
+{
+    Console.WriteLine(v);
+}
 
