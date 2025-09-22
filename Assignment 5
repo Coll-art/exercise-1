@@ -1,5 +1,6 @@
+
 //~~~~~~~~~~~ Exercise 1: Simple Array Operations ~~~~~~~~~~~ */
-/*//step one
+//step one
  int[] numbers = [1, 2, 3, 4, 5];
  for (int i = 0; i < numbers.Length; i++)
  {
@@ -40,7 +41,6 @@
 
 
 //step 4
-using System.Diagnostics;
 
 List<string> story = new List<string> { "A ", "found ", "bear ", "vines. ", "rasberry " };
 
@@ -91,32 +91,36 @@ foreach (var imputs in password)
     Console.Write($"{imputs} ");
 }
 
-*/
+
 
 // step 5
-using System.Security;
+
+
+
 
 List<int> values = new List<int>();
 List<int> runningToltals = new List<int>();
 
-var sum = 0;
+var summ = 0;
 
-Console.WriteLine("Give me five number.");
+Console.WriteLine("Give me five numbers.");
 
 for (int i = 0; i <= 4; i++)
 {
     var val = Console.ReadLine();
     var value = int.Parse(val);
     values.Add(value);
+
     //total
 
-    sum = sum + value;
-    runningToltals.Add(sum);
-    
+    summ = summ + value;
+    runningToltals.Add(summ);
+
+ 
 }
 
-for (var i =0;)
+for (var i =0; i <= 4; i++)
 {
-    Console.WriteLine(v);
+    Console.WriteLine($"value: {values[i]} running Toltal: {runningToltals[i]}" );
 }
 
