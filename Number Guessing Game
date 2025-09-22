@@ -1,0 +1,14 @@
+//~~~~~~~~~~~ Number Guessing Game ~~~~~~~~~~~ */
+Random rand = new Random();
+int randomNumber = rand.Next(21);
+Console.WriteLine(randomNumber);
+
+Console.WriteLine("guess a number between 1 and 20");
+
+string guess = Console.ReadLine();
+int Guess = int.Parse(guess);
+
+if (Guess < randomNumber)
+{
+    Console.WriteLine($"Correct! the number was {randomNumber}");
+}
