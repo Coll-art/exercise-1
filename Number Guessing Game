@@ -1,26 +1,10 @@
 //~~~~~~~~~~~ Number Guessing Game ~~~~~~~~~~~ */
-/*
-Random rand = new Random();
-int randomNumber = rand.Next(21);
-Console.WriteLine(randomNumber);
-
-Console.WriteLine("guess a number between 1 and 20");
-
-string guess = Console.ReadLine();
-int Guess = int.Parse(guess);
-
-if (Guess < randomNumber)
-{
-    Console.WriteLine($"Correct! the number was {randomNumber}");
-}
-*/
-
-//~~~~~~~~~~~ Number Guessing Game ~~~~~~~~~~~ */
 using Microsoft.VisualBasic;
 
 Random rand = new Random();
 int randomNumber = rand.Next(20) + 1;
-Console.WriteLine(randomNumber);
+
+/*Delete for final product */Console.WriteLine(randomNumber);
 
 Console.WriteLine("You're 29, you work 12 hours a week and make 14 dollars an hour. you Boss's name is Blake Gurd. You've worked here about 9 years.");
 Console.WriteLine("One fataful day he calls you into his office: Ted, (he says) I knoe how hard you work. And you deserve to be rewarded; and I have provided a means for you of rewarding yourself.");
@@ -33,30 +17,76 @@ string decision = Console.ReadLine();
 
 if (decision == "yes" || decision == "Yes")
 {
-    while(Var GUESS != true)
+     var vacationDays = 8;
+    var numberOfGuesses = 0;
+    Console.WriteLine("Really?! I've never had anyone say yes to that before! Okay, guess a number between 1 and 20. Good luck Ted.");
+
+     int guess = -1 ;
+
+    while (guess != randomNumber)
     {
-        
-    Console.WriteLine("guess a number between 1 and 20. Good luck Ted.");
+         Console.WriteLine("guess a number between 1 and 20. Good luck Ted.");
 
-    var vacationDays = 8;
+        string guessAsString = Console.ReadLine();
+        guess = int.Parse(guessAsString);
 
-    string guess = Console.ReadLine();
-    int Guess = int.Parse(guess);
+        if (vacationDays <= 7 && vacationDays > 5)
+        {
+            Console.WriteLine($"Not quite, try guessing again. You have {vacationDays} vacation days until you go negative.");
 
-    if (Guess == randomNumber)
-    {
-        Console.WriteLine($"That's right! the number was {randomNumber}!  You have {vacationDays} vacation days.");
-    }
+            if (guess > randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to high. Guess a lower number.");
+            }
 
-    else (Guess != randomNumber)
-    {
-        Console.WriteLine("Not quite! that's one day down. You want some hints? ");
+            else if (guess < randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to low. Guess a lower higher.");
+            }
+        }
 
-    }
+        else if(vacationDays == 5)
+        {
+            Console.WriteLine($"This is really not going your way. You have {vacationDays} vacation days until you go negative.");
+
+            if (guess > randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to high. Guess a lower number.");
+            }
+
+            else if (guess < randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to low. Guess a lower higher.");
+            }
+        }
+
+
+        else if (vacationDays < 5)
+        {
+            Console.WriteLine($"No it wasn't {guess}. You have {vacationDays} vacation days until you go negative. ");
+            if (guess > randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to high. Guess a lower number.");
+            }
+
+            else if (guess < randomNumber)
+            {
+                Console.WriteLine($"{guess} is a little to low. Guess a lower higher.");
+            }
+
+
+        }
+
+        else if(guess == randomNumber)
+        {
+            Console.WriteLine($"That's right! the number was {randomNumber}!  You have {vacationDays} vacation days.");
+        }
+
+        numberOfGuesses++;
+        vacationDays--;
     }
  
  }
-
 
 
 
