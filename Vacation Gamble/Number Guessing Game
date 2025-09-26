@@ -17,8 +17,6 @@ string decision = Console.ReadLine();
 
 if (decision == "yes" || decision == "Yes")
 {
-    HashSet<int> alreadyGuessed = new HashSet<int>{};
-
      var vacationDays = 7;
     var numberOfGuesses = 0;
 
@@ -33,7 +31,16 @@ if (decision == "yes" || decision == "Yes")
 
         string guessAsString = Console.ReadLine();
         guess = int.Parse(guessAsString);
-        //start
+        //~~~~~~~~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~~
+
+        Console.WriteLine(guess);
+
+        /*cheat */
+    HashSet<int> alreadyGuessed = new HashSet<int>{};
+
+    HashSet<int> possibleGuesses = new HashSet<int>{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
+
         if (vacationDays <= 7 && vacationDays > 5)
         {
 
@@ -115,13 +122,21 @@ if (decision == "yes" || decision == "Yes")
                 Console.WriteLine($"{guess} is a little too low. Guess a lower higher.");
             }
         }
-        //~~~~~~~cheat~~~~~~~~~
+        //~~~~~~~ cheat ~~~~~~~~~
         else if (guess == randomNumber)
         {
+            alreadyGuessed.Add(guess);//HashSet
+
             Random rand2 = new Random();
-            int randomNumber2 = rand.Next(20) + 1;
+            int randomNumber2 = rand2.Next(20) + 1;//make new num
 
             randomNumber = randomNumber2;
+
+            HashSet<int> numbersNotGuessed = possibleGuesses;
+            numbersNotGuessed.ExceptWith(alreadyGuessed);
+
+            Console.WriteLine(randomNumber2);
+
         }
 
 
@@ -139,6 +154,7 @@ if (decision == "yes" || decision == "Yes")
 
                         Console.WriteLine($"That's right! the number was {randomNumber}! You guessed {numberOfGuesses} times leaveing you with {vacationDays} vacation days. ");
                         Console.WriteLine("But I'm just kidding! You can keep your 14 vacation days, I actually called you in here to talk about a promotion I want to give you! ");
+                         Console.WriteLine("This was just a funny joke I wanted to play on you. Also happy birthday.");
                         break;
                     }
 
