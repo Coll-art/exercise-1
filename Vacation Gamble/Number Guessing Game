@@ -7,7 +7,7 @@ int randomNumber = rand.Next(20) + 1;
 /*Delete for final product */Console.WriteLine(randomNumber);
 
 Console.WriteLine("You're 29, you work 12 hours a week and make 14 dollars an hour. you Boss's name is Blake Gurd. You've worked here about 9 years.");
-Console.WriteLine("One fataful day he calls you into his office: Ted, (he says) I knoe how hard you work. And you deserve to be rewarded; and I have provided a means for you of rewarding yourself.");
+Console.WriteLine("One fataful day he calls you into his office: Ted, (he says) I know how hard you work. And you deserve to be rewarded; and I have provided a means for you of rewarding yourself.");
 Console.WriteLine("Curently you have 14 vacation days. I have a proposition for you Ted, I'm thinking of a numbe between one and twenty, and if you can guess it I will grant you with seven more Vaction Days.");
 Console.WriteLine("However, if you accept, you will guess until you guess right, and for every wrong guess I will subtract one vaction day. In fact, you might leave with less time off than you started.");
 Console.WriteLine();
@@ -17,12 +17,12 @@ string decision = Console.ReadLine();
 
 if (decision == "yes" || decision == "Yes")
 {
-     var vacationDays = 7;
+    var vacationDays = 7;
     var numberOfGuesses = 0;
 
-    Console.WriteLine("Really?! I've never had anyone say yes to that before! Okay, guess a number between 1 and 20. Good luck Ted. Your first guess will not count.");
+    Console.WriteLine("Really?! I've never had anyone say yes to that before! Okay, guess a number between 1 and 20. Good luck Ted.");
 
-     int guess = -1 ;
+    int guess = -1;
 
     while (guess != randomNumber)
     {
@@ -35,13 +35,13 @@ if (decision == "yes" || decision == "Yes")
 
         Console.WriteLine(guess);
 
-        /*cheat */
-    HashSet<int> alreadyGuessed = new HashSet<int>{};
+        //     /*cheat */
+        // HashSet<int> alreadyGuessed = new HashSet<int>{};
 
-    HashSet<int> possibleGuesses = new HashSet<int>{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        // HashSet<int> possibleGuesses = new HashSet<int>{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
 
 
-        if (vacationDays <= 7 && vacationDays > 5)
+        if (vacationDays <= 6 && vacationDays > 4)
         {
 
             if (guess > randomNumber)
@@ -59,8 +59,8 @@ if (decision == "yes" || decision == "Yes")
             }
 
         }
-        //at five
-        else if (vacationDays == 5 && guess != randomNumber)
+        
+       else if (vacationDays == 4 && guess != randomNumber)
         {
             Console.WriteLine($"This is really not going your way. You have {vacationDays} guesses until you cut into your own time off.");
 
@@ -76,8 +76,8 @@ if (decision == "yes" || decision == "Yes")
         }
 
 
-        //less than five
-        else if (vacationDays < 5 && guess != randomNumber && vacationDays > 1)
+        
+        else if (vacationDays < 4 && guess != randomNumber && vacationDays > 1)
         {
             Console.WriteLine($"No it wasn't {guess}. You have {vacationDays} guesses until you cut into your own time off. ");
             if (guess > randomNumber)
@@ -123,55 +123,64 @@ if (decision == "yes" || decision == "Yes")
             }
         }
         //~~~~~~~ cheat ~~~~~~~~~
-        else if (guess == randomNumber)
-        {
-            alreadyGuessed.Add(guess);//HashSet
+        // else if (guess == randomNumber)
+        // {
+        //     alreadyGuessed.Add(guess);//HashSet
 
-            Random rand2 = new Random();
-            int randomNumber2 = rand2.Next(20) + 1;//make new num
+        //     Random rand2 = new Random();
+        //     int randomNumber2 = rand2.Next(20) + 1;//make new num
 
-            randomNumber = randomNumber2;
+        //     randomNumber = randomNumber2;
 
-            HashSet<int> numbersNotGuessed = possibleGuesses;
-            numbersNotGuessed.ExceptWith(alreadyGuessed);
+        //     HashSet<int> numbersNotGuessed = possibleGuesses;
+        //     numbersNotGuessed.ExceptWith(alreadyGuessed);
 
-            Console.WriteLine(randomNumber2);
+        //     Console.WriteLine(randomNumber2);
 
-        }
+        // }
 
 
         //win!
-            /*
-                    else if (guess == randomNumber && vacationDays >0)
-                    {
-                        Console.WriteLine($"That's right! the number was {randomNumber}!  You have {vacationDays} extra vacation day!");
-                        break;
-                    }
 
-                    else if(guess == randomNumber && vacationDays < 0)
-                    {
-                        vacationDays = vacationDays + 14;
+       
 
-                        Console.WriteLine($"That's right! the number was {randomNumber}! You guessed {numberOfGuesses} times leaveing you with {vacationDays} vacation days. ");
-                        Console.WriteLine("But I'm just kidding! You can keep your 14 vacation days, I actually called you in here to talk about a promotion I want to give you! ");
-                         Console.WriteLine("This was just a funny joke I wanted to play on you. Also happy birthday.");
-                        break;
-                    }
-
-                    else if(guess == randomNumber && vacationDays == 0)
-                    {
-                        vacationDays = vacationDays + 14;
-
-                        Console.WriteLine($"That's right! the number was {randomNumber}! You guessed {numberOfGuesses} times leaveing you with {vacationDays} vacation days. ");
-                        Console.WriteLine("But I'm just kidding! I actually called you in here to talk about a promotion I want to give you! ");
-                        break;
-                    }
-
-                    numberOfGuesses++;
-                    vacationDays--;*/
+        numberOfGuesses++;
+        vacationDays--;
     }
 
- }
+
+     if (guess == randomNumber && vacationDays > 0)
+        {
+            Console.WriteLine($"That's right! the number was {randomNumber}!  You have {vacationDays} extra vacation days!");
+            
+        }
+
+        else if (guess == randomNumber && numberOfGuesses == 0)
+        {
+            Console.WriteLine($"That's right! the number was {randomNumber}!  You have {vacationDays} extra vacation days!");
+             vacationDays += 1;
+           
+        }
+
+        else if (guess == randomNumber && vacationDays < 0)
+        {
+            vacationDays = vacationDays + 14;
+
+            Console.WriteLine($"That's right! the number was {randomNumber}! You guessed {numberOfGuesses} times leaveing you with {vacationDays} vacation days. ");
+            Console.WriteLine("But I'm just kidding! You can keep your 14 vacation days, I actually called you in here to talk about a promotion I want to give you! ");
+            Console.WriteLine("This was just a funny joke I wanted to play on you. Also happy birthday.");
+           
+        }
+
+        else if (guess == randomNumber && vacationDays == 0)
+        {
+            vacationDays = vacationDays + 14;
+
+            Console.WriteLine($"That's right! the number was {randomNumber}! You guessed {numberOfGuesses} times leaveing you with {vacationDays} vacation days. ");
+            Console.WriteLine("But I'm just kidding! I actually called you in here to talk about a promotion I want to give you! ");
+            
+        }
+}
 
 
 
