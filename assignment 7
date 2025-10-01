@@ -1,8 +1,9 @@
 /* ~~~~~~~~~~~ Exercise 1: Check Even or Odd ~~~~~~~~~~~ */
 
 
+using System.Globalization;
 using System.Reflection.Metadata.Ecma335;
-
+//function: IsEven
 bool IsEven(int number)
 {
     return number % 2 == 0;
@@ -11,22 +12,46 @@ bool IsEven(int number)
 Console.WriteLine(IsEven(7));
 Console.WriteLine(IsEven(4));
 
+//function 2 SumArray
+// fastest way to get a large number of arrays is "FUNCTIONS"
+int[] nums = [1, 2, 3];
+int[] nums2 = [1, 4, 3];
+int[] nums3 = [10, 50, 100];
+int[] nums4 = [-1, -2, -3,];
 
 int SumArray(int[] numbers)
 {
-    int sum = 2 + 4;
+
+    int sum = 0;
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        sum = sum + numbers[i];
+    }
+
     return sum;
 }
-//  Console.WriteLine("Give me some numbers.");
-// string nums = Console.ReadLine();
-//     int Nums = int.Parse(nums);
+
+Console.WriteLine(SumArray(nums));
+Console.WriteLine(SumArray(nums2));
+Console.WriteLine(SumArray(nums3));
+Console.WriteLine(SumArray(nums4));
 
 
-// var a = 4;
-// var b = 3;
+double[] decimal1 = [1.1, 2.2, 3.3];
+double[] decimal2 = [-1.1, -2.2, -3.3];
+double AverageArray(int[] numbers)
+{
+    double averageStep1 = 0;
 
-// int Add(int a, int b )
-// {
-//     return a + b;
-// }
-// // Console.WriteLine()
+    for (int i = 0; i < AverageArray.Length; i++)
+    {
+         averageStep1 = averageStep1 + numbers[i];
+    }
+
+    return averageStep1;
+
+}
+
+AverageArray(decimal1);
+AverageArray(decimal2);
