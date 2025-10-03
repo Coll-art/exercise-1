@@ -64,20 +64,29 @@ Console.WriteLine(AverageArray(decimal2));
 
 
 //part 4
-int number;
+
+
 int PromptInt(string message)
 {
-    while (!int.TryParse(Console.Read()), out number)
+    bool isValid = false;
+    int userInput = 0;
+    while (!isValid)
     {
-        Console.WriteLine("Give me an int... or else.");
 
-        int num = Console.Read();
+        Console.WriteLine(message);
 
-        bool isValid = int.TryParse(num);
+        string input = Console.ReadLine();
+        //int input2 = int.Parse(input);
 
-        return num;
+        isValid = int.TryParse(input, out userInput);
+
+
+        // if (isValid)
+        // {
+        //     return userInput;
+        // }
     }
-    
+    return userInput;
 }
 
-PromptInt()
+Console.WriteLine(PromptInt("Give me an int... or else."));
