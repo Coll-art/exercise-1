@@ -9,20 +9,23 @@ string userName = Console.ReadLine();
 
 if (userName == "Glen" && passWord == "a" || passWord == ":~()")
 {
-     string options = Console.ReadLine();
-     
-        while (options != "Exit")
+    int inventory = 0;
+
+    while (inventory < 10)
     {
 
         Console.WriteLine("What would you like to do?");
         Console.WriteLine();
         Console.WriteLine("---------------------------------------");
         Console.WriteLine("1.view inventory");
-        Console.WriteLine("2.Add to inventory");
-        Console.WriteLine("3.Remove from inventory");
+        Console.WriteLine("2.Add to inventory (buy car)");
+        Console.WriteLine("3.Remove from inventory (sell car)");
         Console.WriteLine("4.Exit");
         Console.WriteLine("---------------------------------------");
 
+        string options = Console.ReadLine();
+         
+         if(options == "1")
     }
 }
 
