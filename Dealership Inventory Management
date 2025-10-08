@@ -1,4 +1,29 @@
 // ~~~~~~~~~~~~~~~Assignment 8: dealership inventory managment~~~~~~~~~~~~~~~
 
+using System.Runtime.InteropServices;
+Console.WriteLine("Enter password:");
 
-Console.WriteLine()
+string password = Console.ReadLine();
+
+if (password == "GoodDays")
+{
+    string options = Console.ReadLine();
+
+    while (options != "Exit")
+        {
+
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("1.view inventory");
+            Console.WriteLine("2.Add to inventory");
+            Console.WriteLine("3.Remove from inventory");
+            Console.WriteLine("4.Exit");
+            Console.WriteLine("---------------------------------------");
+        }
+}
+
+
+
+
+
