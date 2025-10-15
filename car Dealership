@@ -5,7 +5,15 @@ Console.WriteLine("Enter Username:");
 Console.WriteLine("Enter password:");
 
 string userName = Console.ReadLine();
- string passWord = Console.ReadLine();
+string passWord = Console.ReadLine();
+ List<int> years;
+        years = new List<int>();
+
+        List<string> makes;
+        makes = new List<string>();
+
+        List<string> models;
+        models = new List<string>();
 
 if (userName == "a" && passWord == "s" || passWord == ":~()")
 {
@@ -23,21 +31,10 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
         Console.WriteLine("4.Exit");
         Console.WriteLine("---------------------------------------");
 
-        List<int> years;
-        years = new List<int>();
-
-        List<string> makes;
-        makes = new List<string>();
-
-        List<string> models;
-        models = new List<string>();
-
         string options = Console.ReadLine();
 
 
-
-
-         if (options == "2")
+        if (options == "2")
         {
             Console.WriteLine("Please inter the vehicle's model year:");
 
@@ -57,17 +54,45 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             models.Add(model);
 
             Console.WriteLine($"Thank you! Your {year} {make} {model} has been added to the inventory");
-            
+
             Console.WriteLine();
+            inventory++;
         }
-        
-         else if (options == "1")
-        {
-            foreach (var vehicles in years)
+        else if(options == "1")
+        {        
+            for (int i = 0; i < years.Count; i++)
             {
-                Console.WriteLine("");
+                Console.WriteLine(i + 1 + ". " + years[i] + " " + makes[i] + " " + models[i]);
+
+                System.Console.WriteLine();
             }
             
+
+        }
+
+        else if(options == "1" && inventory == 0)
+        {
+            Console.WriteLine("ERROR");
+            Console.WriteLine("Sorry, your inventory in currently empty.");
+        }
+
+        //finish op 3
+        else if (options == "3")
+        {
+            System.Console.WriteLine("Remove a vehicle.");
+
+            for (int i = 0; i < years.Count; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + years[i] + " " + makes[i] + " " + models[i]);
+
+                 System.Console.WriteLine();
+            }
+           
+        }
+
+        else if (options == "4")
+        {
+            break;
         }
     }
 }
