@@ -79,15 +79,23 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
         //finish op 3
         else if (options == "3")
         {
-            System.Console.WriteLine("Remove a vehicle.");
+            System.Console.WriteLine("Remove a vehicle buy typing in year, make and model.");
 
             for (int i = 0; i < years.Count; i++)
             {
                 Console.WriteLine(i + 1 + ". " + years[i] + " " + makes[i] + " " + models[i]);
 
-                 System.Console.WriteLine();
+                System.Console.WriteLine();
             }
-           
+
+            string remove = Console.ReadLine();
+            int remove2 = int.Parse(remove);
+
+            years.RemoveAt(remove2 - 1);
+            makes.RemoveAt(remove2 - 1);
+            models.RemoveAt(remove2 - 1);
+
+
         }
 
         else if (options == "4")
@@ -97,17 +105,3 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
     }
 }
 
-/*
-int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
-//numbers[0, 0] = 5;  // Change value to 5
-//Console.WriteLine(numbers[0, 0]); // Outputs 5 instead of 1
-
-Console.WriteLine(numbers[0,0]);
-
-Console.WriteLine(numbers[1,1]);
-
-//Console.WriteLine(numbers[2,2]);
-
-Console.WriteLine(numbers[0,1]);
-
-*/
