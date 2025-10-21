@@ -1,0 +1,49 @@
+person.cs
+public class Person //class itslf
+{
+    public string Name;//insance properties
+    public int Age;
+
+    public bool IsAdult
+{
+        get { return Age >= 18; }
+    }
+    public Person(string name, int age) //constructor
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public string HappyBirthday()// method
+    {
+        Age = Age + 1;
+
+        return $"HappyBirth {Name}";
+    }
+
+    public static  ()
+
+}
+
+
+
+
+//program.cs
+Person P1 = new Person("Elmo", 3);//create new instance
+
+if (P1.Age <= 0)
+{
+    System.Console.WriteLine("Age cannot be negative.");
+}
+
+else
+{
+    System.Console.WriteLine($"Hi, my name is {P1.Name} and I'm {P1.Age} years old :)");
+}
+
+System.Console.WriteLine(P1.HappyBirthday());//Called method
+
+System.Console.WriteLine($"{P1.IsAdult}");
+
+
+  
