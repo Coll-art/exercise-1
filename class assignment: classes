@@ -26,7 +26,7 @@ public class Person //class itslf
 }
 
 
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 //program.cs
 Person P1 = new Person("Elmo", 3);//create new instance
