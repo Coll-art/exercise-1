@@ -1,1 +1,75 @@
+//~~~~~~~~~~~~~~~~ person.cs: ~~~~~~~~~~~~~~~~
+
+
+
+using System.Security.Cryptography.X509Certificates;
+
+public class Person //class itslf
+{
+
+    private static int _nextId;
+
+    private static readonly int Id;
+
+    public string Name;//instance properties IP
+    public int Age;//IP
+
+    public bool IsAdult
+    {
+        get { return Age >= 18; }
+    }
+
+    public Person(string name, int age) //constructor
+    {
+        Name = name;// Assignment 9
+        Age = age;// Assignment 9
+
+        _nextId = Id; // Assignment 10
+
+        _nextId = _nextId + 1; // Assignment 10
+    }
+
+    public string Introduce()
+    {
+        return $"Hi, my name is {Name} and I'm {Age} years old :)";
+    }
+
+    public string HappyBirthday()// method
+    {
+       
+            Age = Age + 1;
+        
+           
+        return $"HappyBirth {Name}";
+    }
+
+    public static string GreetAll(List<Person> people)//method
+    {
+        string introductions = "";
+
+        foreach (Person person in people)
+        {
+            introductions += person.Introduce();//line 39 redoes line 23
+
+            introductions += "\n";
+        }
+
+        return introductions;
+    }
+
+    public override string ToString()//method
+    {
+        //return base.ToString();
+        return $"{Name}, {Age}";
+    }
+
+public bool IsOlderThan(Person person)
+    {
+        
+
+        return Age > person.Age;// is greater sign is acting as: True if Age is bigger than person.Age
+    }
+}
+
+
 
