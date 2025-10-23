@@ -72,4 +72,53 @@ public bool IsOlderThan(Person person)
 }
 
 
+//~~~~~~~~~~~~~~~~~~~~~~ Program.cs: ~~~~~~~~~~~~~~~~~~~~~~
+
+
+using System.Runtime.CompilerServices;
+
+Person P1 = new Person("Elmo", 3);//create new instance
+
+Person P2 = new Person("Cookie Monster", 500);// instance
+
+Person P3 = new Person("Daryle", 60);// instance
+
+Person P4 = new Person("Freddy", 15);// instance
+
+Person P5 = new Person("Chippers", 20);// instance
+
+if (P1.Age <= 0)
+{
+    System.Console.WriteLine("Age cannot be negative.");
+}
+
+else
+{
+    System.Console.WriteLine(P1.Introduce());
+}
+
+
+System.Console.WriteLine(P1.HappyBirthday());//Called method
+
+System.Console.WriteLine($"{P1.IsAdult}");
+
+List<Person> people;
+people = new List<Person>();
+// All People inside GreetAll
+people.Add(P1);
+
+people.Add(P2);
+
+people.Add(P3);
+
+people.Add(P4);
+
+people.Add(P5);
+
+System.Console.WriteLine(Person.GreetAll(people));//call method
+
+System.Console.WriteLine(P2.ToString());//call
+
+System.Console.WriteLine(P1.IsOlderThan(P2));//call
+
 
