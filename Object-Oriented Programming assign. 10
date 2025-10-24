@@ -7,9 +7,9 @@ using System.Security.Cryptography.X509Certificates;
 public class Person //class itslf
 {
 
-    private static int _nextId;
+    private static int _nextId; // Assignment 10
 
-    private static readonly int Id;
+    public readonly int Id;// Assignment 10
 
     public string Name;//instance properties IP
     public int Age;//IP
@@ -24,7 +24,7 @@ public class Person //class itslf
         Name = name;// Assignment 9
         Age = age;// Assignment 9
 
-        _nextId = Id; // Assignment 10
+        Id = _nextId; // Assignment 10
 
         _nextId = _nextId + 1; // Assignment 10
     }
@@ -59,17 +59,40 @@ public class Person //class itslf
 
     public override string ToString()//method
     {
-        //return base.ToString();
+        //return base.ToString();?
         return $"{Name}, {Age}";
     }
 
-public bool IsOlderThan(Person person)
+    public bool IsOlderThan(Person person)
     {
-        
+
 
         return Age > person.Age;// is greater sign is acting as: True if Age is bigger than person.Age
     }
+
+    // public override bool Equals(object? obj)
+    // {
+    //     return base.Equals(obj);
+    // }
+
+    public override bool Equals(Object? obj)
+    {
+        Person P1 = obj as Person;
+
+        // if(P1 == P1)
+        // {
+        //     return false;
+        // }
+
+        return Id == P1.Id;
+    }
+    
+    public Person Copy(Person obj)
+    {
+        return new Person(obj.Name, obj.Age);
+    }
 }
+
 
 
 //~~~~~~~~~~~~~~~~~~~~~~ Program.cs: ~~~~~~~~~~~~~~~~~~~~~~
@@ -121,4 +144,6 @@ System.Console.WriteLine(P2.ToString());//call
 
 System.Console.WriteLine(P1.IsOlderThan(P2));//call
 
+System.Console.WriteLine(Person.Equals(P1, P2));//call
 
+System.Console.WriteLine(Person.Copy());
