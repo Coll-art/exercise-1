@@ -216,4 +216,35 @@ System.Console.WriteLine(P1.IsOlderThan(P2));//call
 
 System.Console.WriteLine(Person.Equals(P1, P2));//call
 
-System.Console.WriteLine(Person.Copy());
+System.Console.WriteLine(P1.Copy(obj: P1).Introduce());//call
+
+
+ List<Student> students;
+students = new List<Student>();
+
+
+
+Student S1 = new Student("Elmo", 3);//create new instance
+S1.AddGrade(85);
+S1.AddGrade(90);
+S1.AddGrade(78);
+
+Student S2 = new Student("Cookie Monster", 500);// instance
+S2.AddGrade(88);
+S2.AddGrade(92);
+S2.AddGrade(79);
+
+Student S3 = new Student("Daryle", 60);// instance
+S3.AddGrade(91);
+S3.AddGrade(87);
+S3.AddGrade(85);
+
+Student S4 = new Student("Freddy", 15);// instance
+S4.AddGrade(80);
+S4.AddGrade(83);
+S4.AddGrade(88);
+
+Stundent S5 = new Student("Chippers", 20);// instance
+S5.AddGrade(89);
+S5.AddGrade(90);
+S5.AddGrade(92);
