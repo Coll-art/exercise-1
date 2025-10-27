@@ -86,11 +86,81 @@ public class Person //class itslf
 
         return Id == P1.Id;
     }
-    
+
     public Person Copy(Person obj)
     {
-        return new Person(obj.Name, obj.Age);
+        return new Person(obj.Name, obj.Age);// creates new instance of Person with same name and age as obj: redoes introduce
     }
+}
+
+
+public class Student : Person // inherited 
+{
+   
+    private List<int> _grades;
+
+    public double GetGPA()
+    { int total = 0;
+        double gpa = 0.0;
+        double percent = 0.0;
+
+        for (int i = 0; i < _grades.Count; i++)
+        {
+            total += _grades[i];
+        }
+        percent = total / 100.0;// convert to double
+
+        if(percent >= 0.93)
+        {
+            gpa = 4.0;
+        }
+        else if (percent >= 0.90 && percent <= 0.92)
+        {
+            gpa = 3.7;
+        }
+        else if (percent >= 0.87 && percent <= 0.89)
+        {
+            gpa = 3.3;
+        }
+        else if (percent >= 0.83 && percent <= 0.86)
+        {
+            gpa = 3.0;
+        }
+        else if (percent >= 0.80 && percent <= 0.82)
+        {
+            gpa = 2.7;
+        }
+        else if (percent >= 0.77 && percent <= 0.79)
+        {
+            gpa = 2.3;
+        }
+        else if (percent >= 0.73 && percent <= 0.76)
+        {
+            gpa = 2.0;
+        }
+        else if (percent >= 0.70 && percent <= 0.72)
+        {
+            gpa = 2.0;
+        }
+        else if (percent >= 0.6)
+        {
+            gpa = 1.0;
+        }
+        else
+        {
+            gpa = 0.0;
+        }
+
+        return gpa;
+    }
+    
+
+    public int AddGrade()
+    {
+
+    }
+
+
 }
 
 
