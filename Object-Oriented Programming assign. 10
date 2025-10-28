@@ -219,9 +219,6 @@ System.Console.WriteLine(Person.Equals(P1, P2));//call
 System.Console.WriteLine(P1.Copy(obj: P1).Introduce());//call
 
 
- List<Student> students;
-students = new List<Student>();
-
 
 
 Student S1 = new Student("Elmo", 3);//create new instance
@@ -244,7 +241,9 @@ S4.AddGrade(80);
 S4.AddGrade(83);
 S4.AddGrade(88);
 
-Stundent S5 = new Student("Chippers", 20);// instance
+Student S5 = new Student("Chippers", 20);// instance
 S5.AddGrade(89);
 S5.AddGrade(90);
 S5.AddGrade(92);
+
+people.Add(S1);
