@@ -29,7 +29,7 @@ public class Person //class itslf
         _nextId = _nextId + 1; // Assignment 10
     }
 
-    public string Introduce()
+    public virtual string Introduce()
     {
         return $"Hi, my name is {Name} and I'm {Age} years old :)";
     }
@@ -99,8 +99,15 @@ public class Student : Person // inherited
    
     private List<int> _grades;
 
+
+    public Student(string name, int age) : base(name, age)// constructor
+    {
+        _grades = new List<int>();
+    }
+
     public double GetGPA()
-    { int total = 0;
+    {
+        int total = 0;
         double gpa = 0.0;
         double percent = 0.0;
 
@@ -110,7 +117,7 @@ public class Student : Person // inherited
         }
         percent = total / 100.0;// convert to double
 
-        if(percent >= 0.93)
+        if (percent >= 0.93)
         {
             gpa = 4.0;
         }
@@ -153,16 +160,20 @@ public class Student : Person // inherited
 
         return gpa;
     }
-    
 
-    public int AddGrade()
+    public override string Introduce()
     {
-
+        return $"Hi. I am {Name}. I am {Age}, and my GPA is {GetGPA()}";
     }
+
+    public void AddGrade(int grade)
+    {
+        _grades.Add(grade);
+    }
+    
 
 
 }
-
 
 
 //~~~~~~~~~~~~~~~~~~~~~~ Program.cs: ~~~~~~~~~~~~~~~~~~~~~~
