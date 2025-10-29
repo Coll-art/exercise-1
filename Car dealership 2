@@ -1,0 +1,36 @@
+//car dealership part 2:
+
+// 
+
+public class Vehicle
+{
+    //instances
+
+    private int Year;
+
+    private string Make;
+ 
+    private string Model;
+
+    public Vehicle(int year, string make, string model)//constructor
+    {
+        Year = year;
+
+        Make = make;
+
+        Model = model;
+
+    }
+
+    public string ToString()
+    {
+        return makes
+
+
+    }
+
+
+
+}
+
+
