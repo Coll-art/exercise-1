@@ -163,7 +163,7 @@ public class Student : Person // inherited
 
     public override string Introduce()
     {
-        return $"Hi. I am {Name}. I am {Age}, and my GPA is {GetGPA()}";
+        return $"Hi. I am {Name}. I am {Age}, and my GPA is {GetGPA()}\n";
     }
 
     public void AddGrade(int grade)
@@ -174,6 +174,7 @@ public class Student : Person // inherited
 
 
 }
+//~~~~~~~~~~~~~~~~~~~~~~ Program.cs: ~~~~~~~~~~~~~~~~~~~~~~
 
 
 //~~~~~~~~~~~~~~~~~~~~~~ Program.cs: ~~~~~~~~~~~~~~~~~~~~~~
@@ -219,7 +220,7 @@ people.Add(P4);
 
 people.Add(P5);
 
-System.Console.WriteLine(Person.GreetAll(people));//call method
+
 
 System.Console.WriteLine(P2.ToString());//call
 
@@ -238,14 +239,14 @@ S1.AddGrade(90);
 S1.AddGrade(78);
 
 Student S2 = new Student("Cookie Monster", 500);// instance
-S2.AddGrade(88);
-S2.AddGrade(92);
-S2.AddGrade(79);
+S2.AddGrade(40);
+S2.AddGrade(10);
+S2.AddGrade(30);
 
 Student S3 = new Student("Daryle", 60);// instance
-S3.AddGrade(91);
-S3.AddGrade(87);
-S3.AddGrade(85);
+S3.AddGrade(30);
+S3.AddGrade(12);
+S3.AddGrade(20);
 
 Student S4 = new Student("Freddy", 15);// instance
 S4.AddGrade(80);
@@ -253,8 +254,14 @@ S4.AddGrade(83);
 S4.AddGrade(88);
 
 Student S5 = new Student("Chippers", 20);// instance
-S5.AddGrade(89);
-S5.AddGrade(90);
-S5.AddGrade(92);
+S5.AddGrade(10);
+S5.AddGrade(10);
+S5.AddGrade(70);
 
 people.Add(S1);
+people.Add(S2);
+people.Add(S3);
+people.Add(S4);
+people.Add(S5);
+
+System.Console.WriteLine(Person.GreetAll(people));//call method
