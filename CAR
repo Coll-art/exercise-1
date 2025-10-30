@@ -1,1 +1,8 @@
-//
+//CAR
+
+namespace ConsoleApp1;
+
+public class Car : Vehicle
+{
+
+}
