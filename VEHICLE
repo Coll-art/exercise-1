@@ -1,6 +1,5 @@
-//car dealership part 2:
-
-// 
+namespace ConsoleApp1;
+// VEHICLE
 
 public class Vehicle
 {
@@ -12,24 +11,21 @@ public class Vehicle
  
     private string Model;
 
-    public Vehicle(int year, string make, string model)//constructor
+    public Vehicle(int year, string make, string model)//shouldbe private?
     {
         Year = year;
 
         Make = make;
 
         Model = model;
-
     }
 
     public string ToString()
     {
-        return makes
+        return $"{Year} {Make} {Model}";
 
-
+       
     }
-
-
 
 }
 
