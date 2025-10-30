@@ -1,1 +1,32 @@
-//
+//TRUCK
+
+namespace ConsoleApp1;
+
+public class Truck: Vehicle
+{
+    private int Year;
+
+    private string Make;
+
+    private string Model;
+
+    private int Bed;
+
+    public Truck(int year, string make, string model, int bed): base(year, make, model)
+    {
+        Year = year;
+
+        Make = make;
+
+        Model = model;
+
+        Bed = bed;
+    }
+
+
+    public override string ToString()
+    {
+        return $"{Year} {Make} {Model} with a {Bed} bed";
+    }
+
+}
