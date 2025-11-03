@@ -1,7 +1,6 @@
 // ~~~~~~~~~~~~~~~Assignment 8: dealership inventory managment~~~~~~~~~~~~~~~
 
-using ConsoleApp1;
-using System.Runtime.InteropServices;
+
 Console.WriteLine("Enter Username:");
 Console.WriteLine("Enter password:");
 
@@ -74,11 +73,8 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             Console.WriteLine();
             //inventory++;
 
-         Truck newtruck = new Truck(modelYear, make, model, bedSize);
+            Truck newtruck = new Truck(modelYear, make, model, bedSize);
         }
-
-        System.Console.WriteLine(ToString());//call
-
         else if (options == "1")
         {
             for (int i = 0; i < inventory.Count; i++)
@@ -112,9 +108,11 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             string remove = Console.ReadLine();
             int remove2 = int.Parse(remove);
 
-            years.RemoveAt(remove2 - 1);
-            makes.RemoveAt(remove2 - 1);
-            models.RemoveAt(remove2 - 1);
+            Console.WriteLine($"Thank you! Your {years[remove2 - 1]} {makes[remove2 - 1]} {models[remove2 - 1]} has been removed from the inventory.");//new
+
+            // years.RemoveAt(remove2 - 1); //old
+            // makes.RemoveAt(remove2 - 1);
+            // models.RemoveAt(remove2 - 1);
 
 
         }
@@ -125,4 +123,3 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
         }
     }
 }
-
