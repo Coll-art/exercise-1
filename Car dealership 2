@@ -73,6 +73,8 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
 
             Console.WriteLine();
             //inventory++;
+
+         Truck newtruck = new Truck(modelYear, make, model, bedSize);
         }
 
         System.Console.WriteLine(ToString());//call
