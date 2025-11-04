@@ -1,6 +1,5 @@
 //TRUCK
 
-namespace ConsoleApp1;
 
 public class Truck: Vehicle
 {
