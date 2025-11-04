@@ -1,5 +1,7 @@
-namespace ConsoleApp1;
+
 // VEHICLE
+
+
 
 public class Vehicle
 {
@@ -20,7 +22,7 @@ public class Vehicle
         Model = model;
     }
 
-    public string ToString()
+    public  virtual string ToString()
     {
         return $"{Year} {Make} {Model}";
 
@@ -28,5 +30,3 @@ public class Vehicle
     }
 
 }
-
-
