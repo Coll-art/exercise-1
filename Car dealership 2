@@ -1,6 +1,7 @@
 // ~~~~~~~~~~~~~~~Assignment 8: dealership inventory managment~~~~~~~~~~~~~~~
 
 
+
 Console.WriteLine("Enter Username:");
 Console.WriteLine("Enter password:");
 
@@ -10,8 +11,11 @@ Inventory inventory = new Inventory();
 
 if (userName == "a" && passWord == "s" || passWord == ":~()")
 {
+    string optionsSelected = "";
 
-    while (inventory < 109000)
+
+
+    while (optionsSelected != "5")
     {
 
         Console.WriteLine("What would you like to do?");
@@ -40,44 +44,74 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             Console.WriteLine("Please inter the vehicle's model:");
             string model = Console.ReadLine();
 
-            Console.WriteLine($"Thank you! Your {year} {make} {model} has been added to the inventory");
+            System.Console.WriteLine("Is this a Truck?");
 
-            Console.WriteLine();
-            //inventory++;
+            string TruckInput = Console.ReadLine();
 
-            Vehicle newvehicle = new Vehicle(ModelYear, make, model);
+            if(TruckInput == "y")
+            {
+                System.Console.WriteLine("please enter bed length");
 
-            Inventory.AddVehicle(newvehicle);
+                string BedLenthInput = Console.ReadLine();
+                int bed = int.Parse(BedLenthInput);
+
+                Truck newTruck = new Truck(modelYear, make, model, bed);
+                inventory.AddVehicle(newTruck);
+
+                 Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
+            }
+
+            else
+            {
+
+             Console.WriteLine($"Thank you! Your {year} {make} {model} has been added to the inventory");
+
+                Console.WriteLine();
+                //inventory++;
+
+                int yearAsInt = int.Parse(year);
+
+            Vehicle newvehicle = new Vehicle(yearAsInt, make, model);
+
+            inventory.AddVehicle(newvehicle);
+            }
         }
 
+        /*
+                else if (options == "3")
+                {
+                    Console.WriteLine("Please inter the truck's model year:");
 
-        else if (options == "3")
-        {
-            Console.WriteLine("Please inter the truck's model year:");
+                    string year = Console.ReadLine();
+                    int modelYear = int.Parse(year);
 
-            string year = Console.ReadLine();
-            int modelYear = int.Parse(year);
+                    Console.WriteLine("Please inter the truck's make:");
+                    string make = Console.ReadLine();
 
-            Console.WriteLine("Please inter the truck's make:");
-            string make = Console.ReadLine();
+                    Console.WriteLine("Please inter the truck's model:");
+                    string model = Console.ReadLine();
 
-            Console.WriteLine("Please inter the truck's model:");
-            string model = Console.ReadLine();
+                    Console.WriteLine("Please inter the truck's bed size (in feet):");
+                    string bed = Console.ReadLine();
+                    int bedSize = int.Parse(bed);
 
-            Console.WriteLine("Please inter the truck's bed size (in feet):");
-            string bed = Console.ReadLine();
-            int bedSize = int.Parse(bed);
+                    Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
 
-            Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
+                    Console.WriteLine();
+                    //inventory++;
 
-            Console.WriteLine();
-            //inventory++;
+                    Truck newtruck = new Truck(modelYear, make, model, bedSize);
 
-            Truck newtruck = new Truck(modelYear, make, model, bedSize);
-        }
+                      Inventory.AddTruck(newtruck);
+                }*/
+
+
+
         else if (options == "1")
         {
-            for (int i = 0; i < inventory.Count; i++)
+              public List<Vehicle> vehicles = inventory.vehicles;
+
+            for (int i = 0; i < inventory.Count; ++i)
             {
                 Console.WriteLine(i + 1 + ". " + inventory[i].ToString());
 
@@ -93,14 +127,14 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             Console.WriteLine("Sorry, your inventory in currently empty.");
         }
 
-        //finish op 3
+        //finish op 4
         else if (options == "4")
         {
-            System.Console.WriteLine("Remove a vehicle buy typing in year, make and model.");
+            System.Console.WriteLine("Remove a vehicle: tell me what number the vehicle that you want to remove is.");
 
-            for (int i = 0; i < years.Count; i++)
+            for (int i = 0; i < inventory.Count; i++)
             {
-                Console.WriteLine(i + 1 + ". " + years[i] + " " + makes[i] + " " + models[i]);
+                Console.WriteLine(i + 1 + ". " + inventory[i].ToString());
 
                 System.Console.WriteLine();
             }
@@ -108,7 +142,23 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
             string remove = Console.ReadLine();
             int remove2 = int.Parse(remove);
 
-            Console.WriteLine($"Thank you! Your {years[remove2 - 1]} {makes[remove2 - 1]} {models[remove2 - 1]} has been removed from the inventory.");//new
+            inventory.RemoveVehicle(remove2 - 1);
+
+            // inventory.Remove(inventory[i]);
+
+
+
+            // for (int i = 0; i < years.Count; i++)
+            // {
+            //     Console.WriteLine(i + 1 + ". " + years[i] + " " + makes[i] + " " + models[i]);
+
+            //     System.Console.WriteLine();
+            // }
+
+            // string remove = Console.ReadLine();
+            // int remove2 = int.Parse(remove);
+
+            // Console.WriteLine($"Thank you! Your {years[remove2 - 1]} {makes[remove2 - 1]} {models[remove2 - 1]} has been removed from the inventory.");//new
 
             // years.RemoveAt(remove2 - 1); //old
             // makes.RemoveAt(remove2 - 1);
