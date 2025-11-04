@@ -1,11 +1,10 @@
 
 //INVENTORY
 
-namespace ConsoleApp1;
 
 public class Inventory
 {
-    private List<Vehicle> vehicles;
+    public List<Vehicle> vehicles;
 
     public Inventory()
     {
@@ -19,10 +18,16 @@ public class Inventory
         
     }
 
-    public void RemoveVehicle(Vehicle vehicle)
+    public void RemoveVehicle(int index)
     {
-        vehicles.Remove(vehicle);
+        vehicles.RemoveAt(index);
     }
 
-//addcar
+
+
+    public int Count
+    {
+        get { return vehicles.Count; }
+    }
+
 }
