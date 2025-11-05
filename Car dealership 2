@@ -23,9 +23,9 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
         Console.WriteLine("---------------------------------------");
         Console.WriteLine("1.view inventory");
         Console.WriteLine("2.Add car to inventory (buy car)");
-        Console.WriteLine("3.Add truck to inventory (buy truck)");
-        Console.WriteLine("4.Remove from inventory (sell car)");
-        Console.WriteLine("5.Exit");
+       // Console.WriteLine("3.Add truck to inventory (buy truck)");
+        Console.WriteLine("3.Remove from inventory (sell car)");
+        Console.WriteLine("4.Exit");
         Console.WriteLine("---------------------------------------");
 
         string options = Console.ReadLine();
@@ -48,9 +48,9 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
 
             string TruckInput = Console.ReadLine();
 
-            if(TruckInput == "y")
+            if (TruckInput == "y")
             {
-                System.Console.WriteLine("please enter bed length");
+                System.Console.WriteLine("please enter bed length in feet:");
 
                 string BedLenthInput = Console.ReadLine();
                 int bed = int.Parse(BedLenthInput);
@@ -58,62 +58,31 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
                 Truck newTruck = new Truck(modelYear, make, model, bed);
                 inventory.AddVehicle(newTruck);
 
-                 Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
+                Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
             }
 
             else
             {
 
-             Console.WriteLine($"Thank you! Your {year} {make} {model} has been added to the inventory");
+                Console.WriteLine($"Thank you! Your {year} {make} {model} has been added to the inventory");
 
                 Console.WriteLine();
                 //inventory++;
 
                 int yearAsInt = int.Parse(year);
 
-            Vehicle newvehicle = new Vehicle(yearAsInt, make, model);
+                Vehicle newvehicle = new Vehicle(yearAsInt, make, model);
 
-            inventory.AddVehicle(newvehicle);
+                inventory.AddVehicle(newvehicle);
             }
         }
 
-        /*
-                else if (options == "3")
-                {
-                    Console.WriteLine("Please inter the truck's model year:");
-
-                    string year = Console.ReadLine();
-                    int modelYear = int.Parse(year);
-
-                    Console.WriteLine("Please inter the truck's make:");
-                    string make = Console.ReadLine();
-
-                    Console.WriteLine("Please inter the truck's model:");
-                    string model = Console.ReadLine();
-
-                    Console.WriteLine("Please inter the truck's bed size (in feet):");
-                    string bed = Console.ReadLine();
-                    int bedSize = int.Parse(bed);
-
-                    Console.WriteLine($"Thank you! Your {year} {make} {model} with a {bed} bed has been added to the inventory");
-
-                    Console.WriteLine();
-                    //inventory++;
-
-                    Truck newtruck = new Truck(modelYear, make, model, bedSize);
-
-                      Inventory.AddTruck(newtruck);
-                }*/
-
-
-
         else if (options == "1")
         {
-              public List<Vehicle> vehicles = inventory.vehicles;
 
             for (int i = 0; i < inventory.Count; ++i)
             {
-                Console.WriteLine(i + 1 + ". " + inventory[i].ToString());
+                Console.WriteLine(i + 1 + ". " + inventory.vehicles[i].ToString());
 
                 System.Console.WriteLine();
             }
@@ -121,20 +90,20 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
 
         }
 
-        else if (options == "1" && inventory == 0)
+        else if (options == "1" && inventory.vehicles.Count == 0)
         {
             Console.WriteLine("ERROR");
             Console.WriteLine("Sorry, your inventory in currently empty.");
         }
 
         //finish op 4
-        else if (options == "4")
+        else if (options == "3")
         {
             System.Console.WriteLine("Remove a vehicle: tell me what number the vehicle that you want to remove is.");
 
             for (int i = 0; i < inventory.Count; i++)
             {
-                Console.WriteLine(i + 1 + ". " + inventory[i].ToString());
+                Console.WriteLine(i + 1 + ". " + inventory.vehicles[i].ToString());
 
                 System.Console.WriteLine();
             }
@@ -167,7 +136,7 @@ if (userName == "a" && passWord == "s" || passWord == ":~()")
 
         }
 
-        else if (options == "5")
+        else if (options == "4")
         {
             break;
         }
